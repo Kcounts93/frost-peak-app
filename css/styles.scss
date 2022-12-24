@@ -29,11 +29,8 @@ header {
   }
 }
 
-.frost-logo {
-  font-family: $logo-font;
-  font-weight: 700;
-  font-size: 2rem;
-  color: $color-primary;
+.logo-img {
+  width: 50%;
 }
 
 .site-footer {
@@ -45,7 +42,6 @@ header {
 header {
   margin: 0;
   padding: 1rem;
-  background-color: black;
 }
 
 .navbar {

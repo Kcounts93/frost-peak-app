@@ -12,11 +12,8 @@ h2 {
 header h2 {
   color: #dbdbdb; }
 
-.frost-logo {
-  font-family: "Oswald", sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  color: #393a3f; }
+.logo-img {
+  width: 50%; }
 
 .site-footer {
   background-color: white;
@@ -25,8 +22,7 @@ header h2 {
 
 header {
   margin: 0;
-  padding: 1rem;
-  background-color: black; }
+  padding: 1rem; }
 
 .navbar {
   background-color: #a4a4a4; }
