@@ -1,3 +1,4 @@
+@import url("../node_modules/font-awesome/css/font-awesome.min.css");
 $color-primary: #393a3f;
 $color-secondary: #b70200;
 $color-light: #dbdbdb;
@@ -27,6 +28,14 @@ header {
   h2 {
     color: $color-light;
   }
+}
+
+.card {
+  background-color: $color-secondary;
+}
+
+.fa {
+  color: $color-secondary;
 }
 
 .logo-img {

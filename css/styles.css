@@ -1,3 +1,4 @@
+@import url("../node_modules/font-awesome/css/font-awesome.min.css");
 body {
   font-family: "Montserrat", sans-serif; }
 
@@ -11,6 +12,12 @@ h2 {
 
 header h2 {
   color: #dbdbdb; }
+
+.card {
+  background-color: #b70200; }
+
+.fa {
+  color: #b70200; }
 
 .logo-img {
   width: 50%; }
