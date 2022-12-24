@@ -1,32 +1,38 @@
 body {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Montserrat", sans-serif; }
 
 h1,
 h2,
 h3 {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Montserrat", sans-serif; }
 
 h2 {
-  color: #3046c5; }
+  color: #393a3f; }
 
 header h2 {
-  color: #cec8ff; }
+  color: #dbdbdb; }
+
+.frost-logo {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #393a3f; }
 
 .site-footer {
-  background-image: linear-gradient(#cec8ff, white);
+  background-color: white;
+  border-bottom: 1px solid;
   padding: 20px 0; }
 
-.jumbotron {
+header {
   margin: 0;
-  padding: 30px;
-  background-image: linear-gradient(to right, #5637dd, #3046c5, #60106b);
-  color: white; }
+  padding: 1rem;
+  background-color: black; }
 
 .navbar {
-  background-color: #901cad; }
+  background-color: #a4a4a4; }
 
 .carousel {
-  border: solid #5637dd; }
+  border: solid #b70200; }
 
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.5); }

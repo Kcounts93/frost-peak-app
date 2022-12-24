@@ -1,12 +1,13 @@
-$color-primary: #3046c5;
-$color-secondary: #5637dd;
-$color-pale: #cec8ff;
-$color-mid: #901cad;
-$color-dark: #60106b;
+$color-primary: #393a3f;
+$color-secondary: #b70200;
+$color-light: #dbdbdb;
+$color-mid: #a4a4a4;
+
 $color-black-transparent: rgba(0, 0, 0, 0.5);
 
-$body-font: "Open Sans", sans-serif;
-$header-font: "Open Sans", sans-serif;
+$body-font: "Montserrat", sans-serif;
+$header-font: "Montserrat", sans-serif;
+$logo-font: "Oswald", sans-serif;
 
 body {
   font-family: $body-font;
@@ -24,25 +25,27 @@ h2 {
 
 header {
   h2 {
-    color: $color-pale;
+    color: $color-light;
   }
 }
 
+.frost-logo {
+  font-family: $logo-font;
+  font-weight: 700;
+  font-size: 2rem;
+  color: $color-primary;
+}
+
 .site-footer {
-  background-image: linear-gradient($color-pale, white);
+  background-color: white;
+  border-bottom: 1px solid;
   padding: 20px 0;
 }
 
-.jumbotron {
+header {
   margin: 0;
-  padding: 30px;
-  background-image: linear-gradient(
-    to right,
-    $color-secondary,
-    $color-primary,
-    $color-dark
-  );
-  color: white;
+  padding: 1rem;
+  background-color: black;
 }
 
 .navbar {
