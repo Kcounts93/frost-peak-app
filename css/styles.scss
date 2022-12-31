@@ -231,6 +231,28 @@ section {
     z-index: -1;
   }
 
+  .buy-tickets {
+    font-family: $font-primary;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 25px;
+    transition: 0.5s;
+    margin-top: 10px;
+    border: 2px solid rgba($white, 0.5);
+    margin-top: 10px;
+    background-color: $primary;
+    color: #fff;
+    &:hover {
+      background-color: white;
+      color: $primary;
+      border-color: $primary;
+    }
+  }
+
   .icon-box:hover::before {
     background: $primary;
     top: 0;
