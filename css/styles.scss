@@ -1160,17 +1160,17 @@ section {
     font-weight: 700;
     line-height: 56px;
     text-transform: uppercase;
-    color: #fff;
+    color: white;
     text-shadow: -1px 0 2px $secondary;
   }
 
   h2 {
-    color: #fff;
+    color: $cyan;
     margin-bottom: 50px;
-    font-size: 20px;
+    font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: 700;
-    text-shadow: -1px 0 2px $secondary;
+    text-shadow: -1px 0 2px white;
   }
 
   .btn-get-started {
