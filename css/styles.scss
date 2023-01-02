@@ -1,12 +1,18 @@
+@import url("../node_modules/font-awesome/css/font-awesome.min.css");
+
 // Fonts
 $font-default: "Montserrat", sans-serif;
 $font-primary: "Oswald", sans-serif;
 $font-secondary: "Montserrat", sans-serif;
 
 // Colors
-$default: #444444;
+$default: #404c52;
 $primary: #67b0d1;
-$secondary: #2f4d5a;
+$secondary: #284452;
+$dark-blue: #4d859e;
+$light-blue: #abcad9;
+$accent1: #dc3545;
+$accent2: #17a2b8;
 
 // General Colors
 $red: #dc3545;
@@ -1187,12 +1193,17 @@ section {
   }
 
   h2 {
-    color: $cyan;
+    color: $dark-blue;
     margin-bottom: 50px;
     font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: 700;
     text-shadow: -1px 0 2px white;
+  }
+
+  .hero-icons {
+    color: $accent2;
+    font-size: 3rem;
   }
 
   .btn-get-started {
