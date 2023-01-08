@@ -1,486 +1,766 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Frost Peak</title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-       <!-- build:css css/main.css copy to other pages-->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Frost Peak</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- build:css css/main.css copy to other pages-->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/node_modules/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+    />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;7000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;7000&display=swap"
+      rel="stylesheet"
+    />
     <!-- endbuild -->
-   </head>
+  </head>
 
-   <body>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top header-transparent">
+      <div
+        class="container d-flex align-items-center justify-content-between position-relative"
+      >
+        <div class="logo">
+          <a href="index.html"
+            ><img src="img/frostpeak-white-01.png" alt="" class="img-fluid"
+          /></a>
+        </div>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-transparent">
-    <div class="container d-flex align-items-center justify-content-between position-relative">
-
-      <div class="logo">
-        <a href="index.html"><img src="img/frostpeak-white-01.png" alt="" class="img-fluid"></a>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li>
+              <a class="nav-link scrollto" href="#packages">Tickets & Passes</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="#services">Conditions & Map</a>
+            </li>
+            <li><a class="nav-link scrollto" href="#portfolio">Hours</a></li>
+            <li><a class="nav-link scrollto" href="#team">Events</a></li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li>
+              <a
+                role="button"
+                class="btn btn-lg btn-light text-dark text-nowrap"
+                id="loginButton"
+                >Login</a
+              >
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
       </div>
+    </header>
+    <!-- End Header -->
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#packages">Tickets & Passes</a></li>
-          <li><a class="nav-link scrollto" href="#services">Conditions & Map</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Hours</a></li>
-          <li><a class="nav-link scrollto" href="#team">Events</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a role="button" class="btn btn-lg btn-light text-dark text-nowrap" id="loginButton">Login</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-    </div>
-  </header><!-- End Header -->
-
-  <!-- Login Modal -->
-  <div id="loginModal" class="modal modal-fade" role="dialog">
-    <div class="modal-dialog" role="document">
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal modal-fade" role="dialog">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Login to Your Account</h3>
-                <button id="loginBtn" type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label class="sr-only" for="loginEmail">Email Address</label>
-                                <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email">
-                            </div>
-                            <div class="form-group col-12">
-                                <label class="sr-only" for="loginPassword">Password</label>
-                                <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="Password">
-                            </div>
-                            <div class="col-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox">
-                                    <label class="form-check-label"> Remember me</label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="text-primary">
-                                    <a href="#" id="createAccount">Create Account</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
-                        </div>
-                    </form>
+          <div class="modal-header">
+            <h3 class="modal-title">Login to Your Account</h3>
+            <button
+              id="loginBtn"
+              type="button"
+              class="close"
+              data-dismiss="modal"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-12">
+                    <label class="sr-only" for="loginEmail"
+                      >Email Address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control form-control-sm"
+                      id="loginEmail"
+                      placeholder="Enter email"
+                    />
+                  </div>
+                  <div class="form-group col-12">
+                    <label class="sr-only" for="loginPassword">Password</label>
+                    <input
+                      type="password"
+                      class="form-control form-control-sm"
+                      id="loginPassword"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div class="col-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" />
+                      <label class="form-check-label"> Remember me</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="text-primary">
+                      <a href="#" id="createAccount">Create Account</a>
+                    </div>
+                  </div>
                 </div>
+                <div class="form-row">
+                  <button
+                    type="button"
+                    class="btn btn-secondary btn-sm ml-auto"
+                    data-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                  <button type="submit" class="btn btn-primary btn-sm ml-1">
+                    Sign in
+                  </button>
+                </div>
+              </form>
             </div>
-         </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-<!-- end login modal -->
+    <!-- end login modal -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container">
-      <h1>Welcome to Frost Peak</h1>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+      <div class="hero-container">
+        <h1>Welcome to Frost Peak</h1>
         <div class="container bg-light mt-5 p-4">
-            <h2>Book your lift tickets early and save today!</h2>
-            <div class="row">
-                <div class="col">
-                  <i class="fa fa-ticket hero-icons"></i>
-                  <h3>Lift Tickets</h3>
-                </div>
-                <div class="col">
-                  <i class="fa fa-vcard hero-icons"></i>
-                    <h3>Passes</h3>
-                </div>
-                <div class="col">
-                  <i class="fa fa-hand-peace-o hero-icons"></i>
-                    <h3>Rentals</h3>
-                </div>
-                <div class="col">
-                  <i class="fa fa-circle-thin fa-stack-2x"></i>
-                  <i class="fa fa-calendar hero-icons"></i>
-                    <h3>Events</h3>
-                </div>
+          <h2>Book your lift tickets early and save today!</h2>
+          <div class="row">
+            <div class="col">
+              <i class="fa fa-ticket hero-icons"></i>
+              <h3>Lift Tickets</h3>
             </div>
-        </div>
-      <a href="#about" class="btn-get-started scrollto"><i class=" fa fa-chevron-down"></i></a>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- =======Passes Section ======= -->
-    <section id="packages" class="about">
-      <div class="container">
-
-        <div class="row no-gutters">
-          <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="content">
-              <h3>Buy Your Lift Tickets Today</h3>
-              <p>Buy your lift tickets today and save 5%. If you book in advance or buy multiple tickets you can save up to 10%.</p>
-              <a href="#" class="about-btn">Buy Tickets<i class="bx bx-chevron-right"></i></a>
+            <div class="col">
+              <i class="fa fa-vcard hero-icons"></i>
+              <h3>Passes</h3>
+            </div>
+            <div class="col">
+              <i class="fa fa-hand-peace-o hero-icons"></i>
+              <h3>Rentals</h3>
+            </div>
+            <div class="col">
+              <i class="fa fa-circle-thin fa-stack-2x"></i>
+              <i class="fa fa-calendar hero-icons"></i>
+              <h3>Events</h3>
             </div>
           </div>
-          <div class="col-xl-7 d-flex align-items-stretch">
-            <div class="icon-boxes d-flex flex-column justify-content-center">
-              <div class="row">
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                  <i class="bx bx-receipt"></i>
-                  <h4>Corporis voluptates sit</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bx bx-cube-alt"></i>
-                  <h4>Ullamco laboris nisi</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                  <i class="bx bx-images"></i>
-                  <h4>Labore consequatur</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                  <i class="bx bx-shield"></i>
-                  <h4>Beatae veritatis</h4>
-                  <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                </div>
-              </div>
-            </div><!-- End .content-->
-          </div>
         </div>
+        <a href="#about" class="btn-get-started scrollto"
+          ><i class="fa fa-chevron-down"></i
+        ></a>
       </div>
-    </section><!-- End About Section -->
+    </section>
+    <!-- End Hero -->
 
-    <!-- ======= Weather Conditions & Map Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-          <h2>Mountain Conditions</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+    <main id="main">
+      <!-- =======Passes Section ======= -->
+      <section id="packages" class="about">
+        <div class="container">
+          <div class="row no-gutters">
+            <div
+              class="content col-xl-5 d-flex align-items-stretch"
+              data-aos="fade-up"
+            >
+              <div class="content">
+                <h3>Buy Your Lift Tickets Today</h3>
+                <p>
+                  Buy your lift tickets today and save 5%. If you book in
+                  advance or buy multiple tickets you can save up to 10%.
+                </p>
+                <a href="#" class="about-btn"
+                  >Buy Tickets<i class="bx bx-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-xl-7 d-flex align-items-stretch">
+              <div class="icon-boxes d-flex flex-column justify-content-center">
+                <div class="row">
+                  <div
+                    class="col-md-6 icon-box"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
+                    <i class="bx bx-receipt"></i>
+                    <h4>Corporis voluptates sit</h4>
+                    <p>
+                      Consequuntur sunt aut quasi enim aliquam quae harum
+                      pariatur laboris nisi ut aliquip
+                    </p>
+                  </div>
+                  <div
+                    class="col-md-6 icon-box"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Ullamco laboris nisi</h4>
+                    <p>
+                      Excepteur sint occaecat cupidatat non proident, sunt in
+                      culpa qui officia deserunt
+                    </p>
+                  </div>
+                  <div
+                    class="col-md-6 icon-box"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <i class="bx bx-images"></i>
+                    <h4>Labore consequatur</h4>
+                    <p>
+                      Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut
+                      maiores omnis facere
+                    </p>
+                  </div>
+                  <div
+                    class="col-md-6 icon-box"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                  >
+                    <i class="bx bx-shield"></i>
+                    <h4>Beatae veritatis</h4>
+                    <p>
+                      Expedita veritatis consequuntur nihil tempore laudantium
+                      vitae denat pacta
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End .content-->
+            </div>
+          </div>
         </div>
+      </section>
+      <!-- End About Section -->
 
-        <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-            </div>
+      <!-- ======= Weather Conditions & Map Section ======= -->
+      <section id="services" class="services">
+        <div class="container">
+          <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+            <h2>Mountain Conditions</h2>
+            <p>
+              Magnam dolores commodi suscipit. Necessitatibus eius consequatur
+              ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
+              quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+              Quia fugiat sit in iste officiis commodi quidem hic quas.
+            </p>
           </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+          <div class="row">
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            >
+              <div class="icon-box" data-aos="fade-up">
+                <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                <p class="description">
+                  Voluptatum deleniti atque corrupti quos dolores et quas
+                  molestias excepturi
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            >
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                <p class="description">
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            >
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon"><i class="bx bx-tachometer"></i></div>
+                <h4 class="title"><a href="">Magni Dolores</a></h4>
+                <p class="description">
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                  qui officia
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            >
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon"><i class="bx bx-world"></i></div>
+                <h4 class="title"><a href="">Nemo Enim</a></h4>
+                <p class="description">
+                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                  blanditiis
+                </p>
+              </div>
+            </div>
+            <div class="col text-center mt-5">
+              <a class="buy-tickets" href="#">Buy Tickets</a>
             </div>
           </div>
-          <div class=" col text-center mt-5"><a class="buy-tickets" href="#">Buy Tickets</a></div>
         </div>
-      </div>
-    </section><!-- End Services Section -->
+      </section>
+      <!-- End Services Section -->
 
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="text-center">
-          <h3>Buy Lift Tickets & Passes Today to Save!</h3>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a class="cta-btn" href="#">Buy Tickets</a>
-        </div>
-
-      </div>
-    </section><!-- End Cta Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-          <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
+      <!-- ======= Cta Section ======= -->
+      <section id="cta" class="cta">
+        <div class="container" data-aos="zoom-in">
+          <div class="text-center">
+            <h3>Buy Lift Tickets & Passes Today to Save!</h3>
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.
+            </p>
+            <a class="cta-btn" href="#">Buy Tickets</a>
           </div>
         </div>
+      </section>
+      <!-- End Cta Section -->
 
-        <div class="row portfolio-container" data-aos="fade-up">
+      <!-- ======= Portfolio Section ======= -->
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+          <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+            <h2>Portfolio</h2>
+            <p>
+              Magnam dolores commodi suscipit. Necessitatibus eius consequatur
+              ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
+              quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+              Quia fugiat sit in iste officiis commodi quidem hic quas.
+            </p>
+          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
+          <div class="row" data-aos="fade-in">
+            <div class="col-lg-12 d-flex justify-content-center">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                <li data-filter=".filter-app">App</li>
+                <li data-filter=".filter-card">Card</li>
+                <li data-filter=".filter-web">Web</li>
+              </ul>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          <div class="row portfolio-container" data-aos="fade-up">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img
+                  src="img/portfolio/portfolio-1.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="img/portfolio/portfolio-1.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="App 1"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="portfolio-details.html" title="More Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <img
+                  src="img/portfolio/portfolio-2.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="img/portfolio/portfolio-2.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="Web 3"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="portfolio-details.html" title="More Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img
+                  src="img/portfolio/portfolio-3.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="img/portfolio/portfolio-3.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="App 2"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="portfolio-details.html" title="More Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
+                <img
+                  src="img/portfolio/portfolio-4.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="img/portfolio/portfolio-4.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="Card 2"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="portfolio-details.html" title="More Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <img
+                  src="img/portfolio/portfolio-5.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="img/portfolio/portfolio-5.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="Web 2"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="portfolio-details.html" title="More Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img
+                  src="img/portfolio/portfolio-6.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="img/portfolio/portfolio-6.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="App 3"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="portfolio-details.html" title="More Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
+                <img
+                  src="img/portfolio/portfolio-7.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="img/portfolio/portfolio-7.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="Card 1"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="portfolio-details.html" title="More Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
+                <img
+                  src="img/portfolio/portfolio-8.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="img/portfolio/portfolio-8.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="Card 3"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="portfolio-details.html" title="More Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
               </div>
             </div>
-          </div>
 
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-          <h2>Team</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="member" data-aos="fade-up">
-              <div class="pic"><img src="img/team/team-1.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <img
+                  src="img/portfolio/portfolio-9.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="img/portfolio/portfolio-9.jpg"
+                    data-gallery="portfolioGallery"
+                    class="portfolio-lightbox"
+                    title="Web 3"
+                    ><i class="bx bx-plus"></i
+                  ></a>
+                  <a href="portfolio-details.html" title="More Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <!-- End Portfolio Section -->
 
-          <div class="col-lg-4 col-md-6">
-            <div class="member" data-aos="fade-up" data-aos-delay="150">
-              <div class="pic"><img src="img/team/team-2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+      <!-- ======= Team Section ======= -->
+      <section id="team" class="team">
+        <div class="container">
+          <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+            <h2>Team</h2>
+            <p>
+              Magnam dolores commodi suscipit. Necessitatibus eius consequatur
+              ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
+              quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+              Quia fugiat sit in iste officiis commodi quidem hic quas.
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="member" data-aos="fade-up">
+                <div class="pic">
+                  <img src="img/team/team-1.jpg" class="img-fluid" alt="" />
+                </div>
+                <div class="member-info">
+                  <h4>Walter White</h4>
+                  <span>Chief Executive Officer</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="member" data-aos="fade-up" data-aos-delay="150">
+                <div class="pic">
+                  <img src="img/team/team-2.jpg" class="img-fluid" alt="" />
+                </div>
+                <div class="member-info">
+                  <h4>Sarah Jhonson</h4>
+                  <span>Product Manager</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="member" data-aos="fade-up" data-aos-delay="300">
+                <div class="pic">
+                  <img src="img/team/team-3.jpg" class="img-fluid" alt="" />
+                </div>
+                <div class="member-info">
+                  <h4>William Anderson</h4>
+                  <span>CTO</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <!-- End Team Section -->
 
-          <div class="col-lg-4 col-md-6">
-            <div class="member" data-aos="fade-up" data-aos-delay="300">
-              <div class="pic"><img src="img/team/team-3.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Contact</h2>
+            <p>
+              Magnam dolores commodi suscipit. Necessitatibus eius consequatur
+              ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
+              quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+              Quia fugiat sit in iste officiis commodi quidem hic quas.
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="info-box mb-4">
+                <i class="bx bx-map"></i>
+                <h3>Our Address</h3>
+                <p>1865 Mountain Road Kellogg ID 83839</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="info-box mb-4">
+                <i class="bx bx-envelope"></i>
+                <h3>Email Us</h3>
+                <p>FrostPeak@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="info-box mb-4">
+                <i class="bx bx-phone-call"></i>
+                <h3>Call Us</h3>
+                <p>1(208)832-4536</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10785.992351559946!2d-116.35225615973481!3d47.480209418927785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53604eacdf9b66eb%3A0x9c9fa7abf0d4065c!2sFrost%20Peak!5e0!3m2!1sen!2sus!4v1672504743553!5m2!1sen!2sus"
+                style="border: 0; width: 100%; height: 384px"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div class="col-lg-6">
+              <form class="php-email-form">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="name"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Team Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="info-box mb-4">
-              <i class="bx bx-map"></i>
-              <h3>Our Address</h3>
-              <p>1865 Mountain Road Kellogg ID 83839</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="info-box  mb-4">
-              <i class="bx bx-envelope"></i>
-              <h3>Email Us</h3>
-              <p>FrostPeak@gmail.com</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="info-box  mb-4">
-              <i class="bx bx-phone-call"></i>
-              <h3>Call Us</h3>
-              <p>1(208)832-4536</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-6 ">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10785.992351559946!2d-116.35225615973481!3d47.480209418927785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53604eacdf9b66eb%3A0x9c9fa7abf0d4065c!2sFrost%20Peak!5e0!3m2!1sen!2sus!4v1672504743553!5m2!1sen!2sus" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-          </div>
-
-          <div class="col-lg-6">
-            <form class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                <div class="form-group mt-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="subject"
+                    id="subject"
+                    placeholder="Subject"
+                    required
+                  />
                 </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                <div class="form-group mt-3">
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="5"
+                    placeholder="Message"
+                    required
+                  ></textarea>
                 </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">
+                    Your message has been sent. Thank you!
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </form>
+            </div>
           </div>
-
         </div>
+      </section>
+      <!-- End Contact Section -->
+    </main>
+    <!-- End #main -->
 
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <!-- <div class="col-lg-4 col-md-6">
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <!-- <div class="col-lg-4 col-md-6">
             <div class="footer-info">
               <h3>Squadfree</h3>
               <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>
@@ -522,7 +802,7 @@
             </ul>
           </div> -->
 
-          <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
+            <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
             <form action="" method="post">
@@ -530,20 +810,23 @@
             </form>
 
           </div> -->
-
+          </div>
         </div>
       </div>
-    </div>
-  </footer><!-- End Footer -->
+    </footer>
+    <!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-
-<!-- build:js js/main.js -->
-<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
-<!-- endbuild -->
-   </body>
+    <!-- build:js js/main.js -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>
